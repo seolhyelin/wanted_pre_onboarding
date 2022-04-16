@@ -30,8 +30,10 @@ const ActiveBar = styled.div`
   top: 0;
   width: 200px;
   height: inherit;
-  background-color: red;
+  background-color: white;
   border-radius: 50px;
+  opacity: 70%;
+  transition: transform 0.2s linear;
 `;
 
 const Button = styled.button`
