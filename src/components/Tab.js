@@ -67,6 +67,7 @@ const TabMenu = styled.button`
     height: 45px;
     padding-left: 50px;
     padding-right: 50px;
+    white-space: nowrap;
     border-bottom: solid 3px #c7c7c7;
   }
 
