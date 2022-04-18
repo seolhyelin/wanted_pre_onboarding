@@ -2,25 +2,60 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BiSearch } from "react-icons/bi";
+
+const base = ["All Fruits", "trange", "grape", "tomato"];
+
 function Dropdown() {
   const [isShow, setIsShow] = useState(false);
+  const [currentKeyword, setCurrentKeyword] = useState("All Fruits");
+  const [currentList, setCurrentList] = useState(base.slice());
+
+  const changeEvent = (e) => {
+    const val = e.target.value;
+    const test = base.slice(1).map((item) => ({
+      item: item,
+      str: item.slice(0, val.length),
+    }));
+
+    // eslint-disable-next-line array-callback-return
+    const result = ["All Fruits"];
+    for (let x of test) {
+      if (x.str === val) result.push(x.item);
+    }
+
+    setCurrentList(result);
+  };
 
   const dropdownShow = (e) => {
     setIsShow(!isShow);
   };
+
+  const testHing = (e) => {
+    setCurrentKeyword(e.target.id);
+    setIsShow(false);
+  };
+
   return (
     <Container>
       <SelectWrapper onClick={dropdownShow}>
         <SelectBox>
-          <p>최병언 설레린</p>
+          <p>{currentKeyword}</p>
         </SelectBox>
         <ArrowIcon />
       </SelectWrapper>
       {isShow && (
         <DropdownWrapper>
-          <SearchBar placeholder="Search Symbol" />
+          <SearchBar placeholder="Search Symbol" onChange={changeEvent} />
           <SearchIcon />
-          <DropdownList></DropdownList>
+          <DropdownList onClick={testHing}>
+            {currentList.map((item, index) => {
+              return (
+                <li key={index} id={item}>
+                  {item}
+                </li>
+              );
+            })}
+          </DropdownList>
         </DropdownWrapper>
       )}
     </Container>
@@ -92,6 +127,8 @@ const DropdownList = styled.ul`
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  cursor: pointer;
+  list-style: none;
 `;
 
 export default Dropdown;
