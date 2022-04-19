@@ -3,24 +3,32 @@ import styled from "styled-components";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { BiSearch } from "react-icons/bi";
 
-const base = ["All Fruits", "trange", "grape", "tomato"];
+const fruitsList = [
+  "All Fruits",
+  "orange",
+  "grape",
+  "tomato",
+  "apple",
+  "banana",
+  "strawberry",
+  "pear",
+];
 
 function Dropdown() {
   const [isShow, setIsShow] = useState(false);
   const [currentKeyword, setCurrentKeyword] = useState("All Fruits");
-  const [currentList, setCurrentList] = useState(base.slice());
+  const [currentList, setCurrentList] = useState(fruitsList.slice());
 
   const changeEvent = (e) => {
-    const val = e.target.value;
-    const test = base.slice(1).map((item) => ({
+    const searchWord = e.target.value;
+    const searchStage = fruitsList.slice(1).map((item) => ({
       item: item,
-      str: item.slice(0, val.length),
+      string: item.slice(0, searchWord.length),
     }));
 
-    // eslint-disable-next-line array-callback-return
     const result = ["All Fruits"];
-    for (let x of test) {
-      if (x.str === val) result.push(x.item);
+    for (let x of searchStage) {
+      if (x.string === searchWord) result.push(x.item);
     }
 
     setCurrentList(result);
@@ -30,7 +38,7 @@ function Dropdown() {
     setIsShow(!isShow);
   };
 
-  const testHing = (e) => {
+  const selectKeyword = (e) => {
     setCurrentKeyword(e.target.id);
     setIsShow(false);
   };
@@ -39,7 +47,7 @@ function Dropdown() {
     <Container>
       <SelectWrapper onClick={dropdownShow}>
         <SelectBox>
-          <p>{currentKeyword}</p>
+          <SelectWord>{currentKeyword}</SelectWord>
         </SelectBox>
         <ArrowIcon />
       </SelectWrapper>
@@ -47,7 +55,7 @@ function Dropdown() {
         <DropdownWrapper>
           <SearchBar placeholder="Search Symbol" onChange={changeEvent} />
           <SearchIcon />
-          <DropdownList onClick={testHing}>
+          <DropdownList onClick={selectKeyword}>
             {currentList.map((item, index) => {
               return (
                 <li key={index} id={item}>
@@ -72,11 +80,15 @@ const SelectWrapper = styled.div`
 
 const SelectBox = styled.div`
   width: 300px;
-  height: 50px;
+  height: 55px;
   padding-left: 10px;
   border: lightgray solid 1px;
   border-radius: 8px;
-  vertical-align: middle;
+`;
+
+const SelectWord = styled.p`
+  color: gray;
+  font-size: 18px;
 `;
 
 const ArrowIcon = styled(IoMdArrowDropdown)`
@@ -91,6 +103,7 @@ const ArrowIcon = styled(IoMdArrowDropdown)`
 const DropdownWrapper = styled.div`
   position: relative;
 `;
+
 const SearchBar = styled.input`
   width: 269px;
   height: 50px;
@@ -108,6 +121,7 @@ const SearchBar = styled.input`
     outline: none;
   }
 `;
+
 const SearchIcon = styled(BiSearch)`
   position: absolute;
   top: 0;
@@ -119,16 +133,26 @@ const SearchIcon = styled(BiSearch)`
 `;
 
 const DropdownList = styled.ul`
-  width: 270px;
-  height: 50px;
-  padding-left: 40px;
+  width: 310px;
+  height: 100%;
   margin: 0;
+  padding-inline-start: 0;
   border: lightgray solid 1px;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  cursor: pointer;
   list-style: none;
+  color: gray;
+  font-size: 20px;
+  line-height: 35px;
+  cursor: pointer;
+
+  li {
+    padding-left: 35px;
+    :hover {
+      background-color: #ededed;
+    }
+  }
 `;
 
 export default Dropdown;

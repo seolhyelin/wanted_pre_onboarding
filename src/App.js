@@ -8,10 +8,10 @@ function App() {
   return (
     <Container>
       {/* <Toggle /> */}
-      <Tab />
+      {/* <Tab /> */}
       {/* <Input /> */}
       {/* <Dropdown /> */}
-      {/* <Slider /> */}
+      <Slider />
     </Container>
   );
 }

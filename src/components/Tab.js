@@ -60,7 +60,6 @@ const TabMenu = styled.button`
   border: none;
   font-size: 20px;
   background-color: white;
-  /* border-bottom: solid 2px #c7c7c7; */
   color: #c7c7c7;
 
   & .tab {

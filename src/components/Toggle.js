@@ -13,7 +13,7 @@ function Toggle() {
       setCurrentActive("상세");
     }
   };
-  console.log(currentActive);
+
   return (
     <Container>
       <ToggleWrapper>
