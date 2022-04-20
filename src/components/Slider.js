@@ -2,36 +2,50 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 function Slider() {
-  const [tosil, setTosil] = useState("1");
+  const [percent, setPercent] = useState(1);
 
-  const test2 = (e) => {
-    setTosil(e.target.value);
+  const handlePercent = (e) => {
+    setPercent(e.target.value);
   };
 
-  const hyelin = (e) => {
-    const orange = e.target.innerHTML.replace(/[%]/, "");
-    setTosil(orange);
+  const percentSlide = () => {
+    const slider = [];
+    for (let i = 1; i <= 100; i++) {
+      slider.push(
+        <Sliders
+          key={`${i}`}
+          id={`${i}`}
+          onClick={() => setPercent(i)}
+          percent={percent}
+        />
+      );
+    }
+    return slider;
   };
 
   return (
     <Container>
       <Range>
-        <RangeNumber>{tosil}</RangeNumber>%
+        <RangeNumber>{percent}</RangeNumber>%
       </Range>
       <SlideWrapper>
-        <SlideBar number={tosil} />
+        {percentSlide()}
         <RangeBar
           type="range"
           min={1}
           max={100}
-          onChange={test2}
-          value={tosil}
+          onChange={handlePercent}
+          value={percent}
         />
       </SlideWrapper>
       <ButtonWrapper>
         {[1, 25, 50, 75, 100].map((number, index) => {
           return (
-            <PercentButton key={index} onClick={hyelin} number={number}>
+            <PercentButton
+              key={index}
+              onClick={() => setPercent(number)}
+              number={number}
+            >
               {number}%
             </PercentButton>
           );
@@ -65,26 +79,27 @@ const RangeNumber = styled.span`
 
 const SlideWrapper = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
 `;
 
-const SlideBar = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 4px;
+const Sliders = styled.div`
+  width: 4.7px;
+  height: ${({ id }) =>
+    id === "1" || id === "25" || id === "50" || id === "75" || id === "100"
+      ? "10px"
+      : "10px"};
+  background-color: ${({ id, percent }) =>
+    Number(id) <= percent ? "#10aeaf" : "lightgray"};
 `;
 
 const RangeBar = styled.input`
-  position: relative;
+  position: absolute;
   width: 470px;
   height: 7px;
   -webkit-appearance: none;
-  background-color: lightgray;
-
-  ::-webkit-progress-value {
-    background-color: red;
-  }
+  background-color: inherit;
+  margin: 0px;
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 30px;

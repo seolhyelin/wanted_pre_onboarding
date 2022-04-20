@@ -85,14 +85,14 @@ const Button = styled.button`
 
   &.default {
     color: ${({ currentActive }) =>
-      currentActive === "기본" ? "red" : "gray"};
+      currentActive === "기본" ? "#000000" : "#787878"};
     font-weight: ${({ currentActive }) =>
       currentActive === "기본" ? "600" : "400"};
   }
 
   &.detail {
     color: ${({ currentActive }) =>
-      currentActive === "상세" ? "red" : "gray"};
+      currentActive === "상세" ? "#000000" : "#787878"};
     font-weight: ${({ currentActive }) =>
       currentActive === "상세" ? "600" : "400"};
   }
