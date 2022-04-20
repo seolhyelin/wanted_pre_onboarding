@@ -82,6 +82,20 @@ const Button = styled.button`
   font-size: 23px;
   z-index: 101;
   cursor: pointer;
+
+  &.default {
+    color: ${({ currentActive }) =>
+      currentActive === "기본" ? "red" : "gray"};
+    font-weight: ${({ currentActive }) =>
+      currentActive === "기본" ? "600" : "400"};
+  }
+
+  &.detail {
+    color: ${({ currentActive }) =>
+      currentActive === "상세" ? "red" : "gray"};
+    font-weight: ${({ currentActive }) =>
+      currentActive === "상세" ? "600" : "400"};
+  }
 `;
 
 export default Toggle;

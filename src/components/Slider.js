@@ -19,6 +19,7 @@ function Slider() {
         <RangeNumber>{tosil}</RangeNumber>%
       </Range>
       <SlideWrapper>
+        <SlideBar number={tosil} />
         <RangeBar
           type="range"
           min={1}
@@ -62,14 +63,28 @@ const RangeNumber = styled.span`
   color: black;
 `;
 
-const SlideWrapper = styled.div``;
+const SlideWrapper = styled.div`
+  position: relative;
+`;
+
+const SlideBar = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 4px;
+`;
 
 const RangeBar = styled.input`
+  position: relative;
   width: 470px;
   height: 7px;
   -webkit-appearance: none;
   background-color: lightgray;
 
+  ::-webkit-progress-value {
+    background-color: red;
+  }
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 30px;
@@ -80,10 +95,12 @@ const RangeBar = styled.input`
     cursor: pointer;
   }
 `;
+
 const ButtonWrapper = styled.div`
   position: relative;
   width: 430px;
 `;
+
 const PercentButton = styled.button`
   position: absolute;
   top: 0;
@@ -103,4 +120,5 @@ const PercentButton = styled.button`
     color: white;
   }
 `;
+
 export default Slider;

@@ -2,78 +2,67 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 function Tab() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [isSelected, setSelected] = useState("감자");
+  const [number, setNumber] = useState(0);
 
-  const tabContArr = [
-    {
-      tabTitle: (
-        <div
-          className={`tab ${activeIndex === 0 ? "is-active" : ""}`}
-          onClick={() => tabClickHandler(0)}
-        >
-          감자
-        </div>
-      ),
-    },
-    {
-      tabTitle: (
-        <div
-          className={`tab ${activeIndex === 1 ? "is-active" : ""}`}
-          onClick={() => tabClickHandler(1)}
-        >
-          고구마
-        </div>
-      ),
-    },
-    {
-      tabTitle: (
-        <div
-          className={`tab ${activeIndex === 2 ? "is-active" : ""}`}
-          onClick={() => tabClickHandler(2)}
-        >
-          카레라이스
-        </div>
-      ),
-    },
-  ];
-
-  const tabClickHandler = (index) => {
-    setActiveIndex(index);
+  const clickWord = (e) => {
+    setNumber(e.target.id);
+    setSelected(e.target.name);
   };
 
   return (
-    <Container>
-      <TabMenu>
-        {tabContArr.map((section, index) => {
-          return <div key={index}>{section.tabTitle}</div>;
-        })}
-      </TabMenu>
-    </Container>
+    <Wrapper>
+      {["감자", "고구마", "카레라이스"].map((word, index) => {
+        return (
+          <Category
+            key={word}
+            id={index}
+            name={word}
+            isSelected={isSelected}
+            onClick={clickWord}
+          >
+            {word}
+          </Category>
+        );
+      })}
+      <HighLight number={number} />
+    </Wrapper>
   );
 }
 
-const Container = styled.div``;
-
-const TabMenu = styled.button`
+const Wrapper = styled.div`
+  position: relative;
   display: flex;
-  justify-content: space-evenly;
+  width: 600px;
+  margin-bottom: 50px;
+  border-bottom: 4px solid lightgray;
+  z-index: 0;
+`;
+
+const Category = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 80px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: none;
   border: none;
-  font-size: 20px;
-  background-color: white;
-  color: #c7c7c7;
+  color: ${({ isSelected, name }) => (isSelected === name ? "black" : "gray")};
+  z-index: 9999;
+  cursor: pointer;
+`;
 
-  & .tab {
-    height: 45px;
-    padding-left: 50px;
-    padding-right: 50px;
-    white-space: nowrap;
-    border-bottom: solid 3px #c7c7c7;
-  }
-
-  & .tab.is-active {
-    border-bottom: solid 3px #12b8ad;
-    color: black;
-  }
+const HighLight = styled.div`
+  position: absolute;
+  top: 80px;
+  width: 200px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #10aeaf;
+  transform: translateX(${({ number }) => `${number * 100}%`});
+  transition: 0.4s ease-out;
 `;
 
 export default Tab;

@@ -10,7 +10,10 @@ const fruitsList = [
   "tomato",
   "apple",
   "banana",
+  "peach",
+  "pineapple",
   "strawberry",
+  "olive",
   "pear",
 ];
 
