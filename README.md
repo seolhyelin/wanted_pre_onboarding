@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+<!-- # 🎓 wanted_pre_onboarding ##
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **📎 배포주소**
 
-## Available Scripts
 
-In the project directory, you can run:
+## **👫 팀원**
 
-### `npm start`
+- 설혜린
+- 
+## **🛠 기술스택**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React, Styled-Components, JavaScript(ES6)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **✔ 과제 구현 목록**
+### Toggle
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Toggle: 버튼 클릭 시, styled-components 내에 식별 Props를 넘겨 transformX의 값을 동적으로 변경
+- Modal: custom Hooks인 useModal과 createPortal를 사용하여 Modal의 렌더링 여부를 동적으로 결정
+- Tab: 버튼 클릭 시, 현재 active된 요소의 색상을 동적으로 변경 및 이동
+- Tag: Array의 내장 메서드들을 활용하여 현재 List에 있는 값들을 동적으로 생성 및 삭제
+- AutoComplete: String의 내장 메서드인 indexOf을 사용하여 -1일 경우를 제외 한 keyword값을 생성
+- ClickToEdit: onChange() 및 onClick() 이벤트의 콜백 함수를 별도로 설정하여 이벤트 후속 처리
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## **📆 개발 기간**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 기간: 2022년 4월 16일 ~ 2022년 4월 20일
 
-### `npm run eject`
+## **👩‍🏫 과제 소감**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> 다양한 기능들을 구현해봄으로써, state 및 props에 따른 조건부 랜더링의 중요성을 다시 한 번 체화할 수 있었습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## **📕 레퍼런스**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 이 프로젝트는 [원티드 프론트엔드 프리온보딩 사전 과제](https://www.wanted.co.kr/events/pre_onboarding_course_8)으로 만들었습니다.
+- 실무 수준의 프로젝트이지만 학습용으로 만들었기 때문에 이 코드를 활용하여 이득을 취하거나 무단 배포할 경우 법적으로 문제될 수 있습니다. -->
