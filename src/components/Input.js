@@ -43,7 +43,7 @@ function Input() {
           type={exposePw.type}
         />
         {exposePw.type === "password" ? (
-          <InvisivbleIcon onClick={convertPassword} />
+          <InvisibleIcon onClick={convertPassword} />
         ) : (
           <VisibleIcon onClick={convertPassword} />
         )}
@@ -76,7 +76,7 @@ const CheckIcon = styled(BsFillCheckCircleFill)`
   color: ${({ isCheck }) => (isCheck ? "#12b8ad" : "#e0e0e0")};
 `;
 
-const InvisivbleIcon = styled(AiOutlineEyeInvisible)`
+const InvisibleIcon = styled(AiOutlineEyeInvisible)`
   position: absolute;
   top: 0;
   left: 0;

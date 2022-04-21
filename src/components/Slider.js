@@ -87,8 +87,9 @@ const Sliders = styled.div`
   width: 4.7px;
   height: ${({ id }) =>
     id === "1" || id === "25" || id === "50" || id === "75" || id === "100"
-      ? "10px"
+      ? "15px"
       : "10px"};
+
   background-color: ${({ id, percent }) =>
     Number(id) <= percent ? "#10aeaf" : "lightgray"};
 `;
