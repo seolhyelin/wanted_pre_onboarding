@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   display: flex;
   width: 600px;
   margin-bottom: 50px;
-  border-bottom: 4px solid lightgray;
+  border-bottom: 4px solid #d3d3d3;
   z-index: 0;
 `;
 
@@ -46,10 +46,11 @@ const Category = styled.button`
   width: 200px;
   height: 80px;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
   background: none;
   border: none;
-  color: ${({ isSelected, name }) => (isSelected === name ? "black" : "gray")};
+  color: ${({ isSelected, name }) =>
+    isSelected === name ? "#000000" : "#d3d3d3"};
   z-index: 9999;
   cursor: pointer;
 `;

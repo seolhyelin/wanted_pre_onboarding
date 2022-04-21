@@ -111,7 +111,7 @@ const SearchBar = styled.input`
   width: 269px;
   height: 50px;
   padding-left: 40px;
-  border: lightgray solid 1px;
+  border: #d3d3d3 solid 1px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 
@@ -140,12 +140,12 @@ const DropdownList = styled.ul`
   height: 100%;
   margin: 0;
   padding-inline-start: 0;
-  border: lightgray solid 1px;
+  border: #d3d3d3 solid 1px;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   list-style: none;
-  color: gray;
+  color: #808080;
   font-size: 20px;
   line-height: 35px;
   cursor: pointer;

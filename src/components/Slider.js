@@ -67,14 +67,14 @@ const Range = styled.div`
   margin-bottom: 30px;
   border: 1px solid #c2c2c2;
   border-radius: 7px;
-  color: gray;
+  color: #808080;
 `;
 
 const RangeNumber = styled.span`
   margin-right: 30px;
   font-size: 23px;
   font-weight: bold;
-  color: black;
+  color: #000000;
 `;
 
 const SlideWrapper = styled.div`
@@ -91,7 +91,7 @@ const Sliders = styled.div`
       : "10px"};
 
   background-color: ${({ id, percent }) =>
-    Number(id) <= percent ? "#10aeaf" : "lightgray"};
+    Number(id) <= percent ? "#10aeaf" : "#d3d3d3"};
 `;
 
 const RangeBar = styled.input`
@@ -105,7 +105,7 @@ const RangeBar = styled.input`
     -webkit-appearance: none;
     width: 30px;
     height: 30px;
-    border: 4px solid white;
+    border: 4px solid #ffffff;
     border-radius: 70%;
     background: #10aeaf;
     cursor: pointer;
@@ -128,12 +128,12 @@ const PercentButton = styled.button`
   border-radius: 9px;
   margin-top: 15px;
   font-size: 13px;
-  color: gray;
+  color: #808080;
   cursor: pointer;
 
   &:hover {
     background-color: #10aeaf;
-    color: white;
+    color: #ffffff;
   }
 `;
 

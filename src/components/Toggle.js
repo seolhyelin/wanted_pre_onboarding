@@ -64,7 +64,7 @@ const ActiveBar = styled.div`
   width: 225px;
   height: 55px;
   border-radius: 50px;
-  background-color: white;
+  background-color: #ffffff;
   transition: 0.4s;
   transform: translateX(
     ${({ currentActive }) => (currentActive === "기본" ? "0%" : "100%")}
